@@ -1,0 +1,8 @@
+.container {
+    width: 80%;
+    display: inline-block;
+    padding: 20px;
+    background-color: #3498db; /* Warna biru muda */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}

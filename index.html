@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            display: inline-block;
+            padding: 20px;
+            background-color: #ff8800; /* Ubah warna background di sini */
+            border: 5px solid #979191;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #0e0d0d;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wisata Jepang</h1>
+        <img id="gambar" src="output-onlinejpgtools.jpg" alt="Gambar Default">
+        <p id="penjelasan">Dotonbori ibarat Shibuya-nya Osaka. Pusat perbelanjaan yang begitu sibuk dan menjadi shopping destination favorit para turis. Di sini kamu dapat berbelanja atau sekadar berfoto di depan papan iklan yang konon sudah dipasang sejak 1935. Di kawasan ini pula kamu dapat menikmati berbagai jenis makanan khas dan hiburan malam khas Osaka. Selain itu, di sekitar Dotonbori terdapat beberapa destinasi yang sayang kamu lewatkan, termasuk Tombori River Cruise Osaka yang membuatmu dapat menyusuri Sungai Dotonbori. </p>
+        <button id="ubahGambarBtn">Ubah Gambar</button>
+    </div>
+    
+    <script>
+        const gambar = document.getElementById("gambar");
+        const penjelasan = document.getElementById("penjelasan");
+        const ubahGambarBtn = document.getElementById("ubahGambarBtn");
+
+        // Daftar gambar yang akan digunakan
+        const daftarGambar = [
+            { src: "aekvbs.jpg", alt: "Gambar 1", penjelasan: "Mengunjungi distrik perbelanjaan Akihabara menghadirkan keasyikan tersendiri bagi para pencinta game dan anime. Pasalnya, distrik ini dipenuhi dengan toko yang menjual berbagai merchandise anime, manga, game, dan gadget." },
+            { src: "aekjbsrj.jpg", alt: "Gambar 2", penjelasan: "Tokyo Tower tidak hanya berbicara tentang ketinggian, tetapi juga simbol kebangkitan orang-orang Jepang setelah perang. Sejak dibangun pada 1958 setelah Perang Dunia II usai, Tokyo Tower menjadi landmark paling ikonik di Jepang." },
+            { src: "jheblvdsjkw.jpg", alt: "Gambar 3", penjelasan: "Biei Blue Pond adalah fenomena alam yang menarik di Hokkaido, dengan warna airnya yang unik, perpaduan menakjubkan antara biru dan hijau yang berubah sesuai dengan cuaca dan musim. Warna unik ini disebabkan oleh kandungan mineral dalam air kolam, dan semakin indah lagi karena kolamnya dikelilingi oleh hutan pinus yang membuat pemandangan di sini semakin indah." }
+        ];
+
+        // Fungsi untuk mengubah gambar dan penjelasannya
+        function ubahGambar() {
+            const randomIndex = Math.floor(Math.random() * daftarGambar.length);
+            const randomImage = daftarGambar[randomIndex];
+            gambar.src = randomImage.src;
+            gambar.alt = randomImage.alt;
+            penjelasan.textContent = randomImage.penjelasan;
+        }
+
+        // Tambahkan event listener untuk tombol "Ubah Gambar"
+        ubahGambarBtn.addEventListener("click", ubahGambar);
+    </script>
+</body>
+</html>
